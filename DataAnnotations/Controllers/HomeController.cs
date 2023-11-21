@@ -42,5 +42,15 @@ namespace DataAnnotations.Controllers
             return Ok(range);
         }
 
+        [HttpPost("Validation")]
+        public IActionResult LetraMaiscula([FromBody] Pessoa pessoa)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            return Ok(pessoa);
+        }
+
     }
 }
